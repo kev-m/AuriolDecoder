@@ -57,7 +57,7 @@ lib_deps =
 #define RF_POWER_PIN 3
 
 // Callback invoked when sensor packet is decoded
-void onSensorPacket(uint16_t sensor_id, float temp, float humidity, bool battery_ok) {
+void onSensorPacket(uint16_t sensor_id, float temp, uint8_t humidity, bool battery_ok) {
   Serial.printf("Sensor 0x%02X: %.1f°C, %d%% Humidity, Battery: %s\n",
     sensor_id, temp, (int)humidity, battery_ok ? "OK" : "Low");
 }
@@ -110,7 +110,7 @@ Reset internal decoder state (optional). Useful for diagnostics or sensor switch
 ### Callback Signature
 
 ```cpp
-void callback(uint16_t sensor_id, uint8_t channel, float temperature_c, float humidity_pct, bool battery_ok)
+void callback(uint16_t sensor_id, uint8_t channel, float temperature_c, uint8_t humidity_pct, bool battery_ok)
 ```
 
 **Parameters:**
