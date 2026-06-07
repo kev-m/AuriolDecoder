@@ -1,0 +1,4 @@
+auriolDecoderSetup	KEYWORD2
+auriolDecoderProcess	KEYWORD2
+auriolDecoderReset	KEYWORD2
+AuriolDecoderCallback	KEYWORD5

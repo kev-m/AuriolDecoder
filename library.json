@@ -1,0 +1,42 @@
+{
+  "name": "AuriolDecoder",
+  "version": "1.0.0",
+  "description": "433MHz Auriol weather sensor decoder for ESP8266 with consensus-based validation. Decodes Type 1 (temperature) and Type 2 (temperature/humidity) sensors with automatic profile detection.",
+  "keywords": [
+    "433MHz",
+    "RF",
+    "sensor",
+    "weather",
+    "auriol",
+    "decoder",
+    "ESP8266",
+    "IoT",
+    "wireless"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kev-m/AuriolDecoder.git"
+  },
+  "authors": [
+    {
+      "name": "Kevin M",
+      "url": "https://github.com/kev-m"
+    }
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/kev-m/AuriolDecoder",
+  "frameworks": "arduino",
+  "platforms": [
+    "espressif8266"
+  ],
+  "dependencies": [],
+  "export": {
+    "exclude": [
+      ".git",
+      ".gitignore",
+      ".github",
+      "*.o",
+      "*.a"
+    ]
+  }
+}
