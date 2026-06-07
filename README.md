@@ -48,6 +48,7 @@ lib_deps =
 ## Quick Start
 
 ```cpp
+#include <Arduino.h>
 #include <AuriolDecoder.h>
 
 // Mandatory: Required by the library
@@ -57,9 +58,9 @@ lib_deps =
 #define RF_POWER_PIN 3
 
 // Callback invoked when sensor packet is decoded
-void onSensorPacket(uint16_t sensor_id, float temp, uint8_t humidity, bool battery_ok) {
-  Serial.printf("Sensor 0x%02X: %.1f°C, %d%% Humidity, Battery: %s\n",
-    sensor_id, temp, (int)humidity, battery_ok ? "OK" : "Low");
+void onSensorPacket(uint16_t sensor_id, uint8_t channel, float temp, uint8_t humidity, bool battery_ok) {
+  Serial.printf("Sensor 0x%02X: Channel: %d, %.1f°C, %d%% Humidity, Battery: %s\n",
+    sensor_id, channel, temp, (int)humidity, battery_ok ? "OK" : "Low");
 }
 
 void setup() {
