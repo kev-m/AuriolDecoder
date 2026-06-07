@@ -127,7 +127,7 @@ void callback(uint16_t sensor_id, uint8_t channel, float temperature_c, uint8_t 
 | Function | GPIO | Purpose |
 |----------|------|---------|
 | RF Data | GPIO2 | Connects to 433MHz receiver data line |
-| RF Power | GPIO3 | Enables/disables receiver module (LOW=on) |
+| RF Power | GPIO3 | Enables/disables receiver module (optional, project specific) |
 | Serial TX | GPIO1 | Debug output (optional) |
 
 ## Performance
