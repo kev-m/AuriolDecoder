@@ -37,7 +37,7 @@ For example, labelled as IAN 384583_2107, "RC Weather station with BBQ sensor 4-
 Add to `platformio.ini`:
 ```ini
 lib_deps =
-    AuriolDecoder@^1.0.0
+  kev-m/AuriolDecoder@^1.0.1
 ```
 
 ### Manual
@@ -162,12 +162,12 @@ uint8_t b3 = raw32 & 0xFF;          // Checksum
 |------|------|------------|--------|
 | b0[7] | Battery flag | Assigned |  |
 | b0[6:0] | Sensor ID (7 bits) | Assigned |  |
-| **b1[7:4]** | **High nibble** | **UNASSIGNED** | 4 bits unused |
+| b1[7:4] | High nibble | UNASSIGNED | 4 bits unused |
 | b1[3:0] | Temperature (upper 4 bits) | Assigned |  |
 | b2[7:0] | Temperature (lower 8 bits) | Assigned |  |
 | b3[7:0] | Checksum | Assigned (unchecked) |  |
 
-**Unassigned: 4 bits in b1 high nibble** (purpose unknown—possibly reserved or manufacturer-specific)
+**Unassigned:** 4 bits in b1 high nibble (purpose unknown—possibly reserved or manufacturer-specific)
 
 
 ### Type 2 RF Timing
@@ -193,16 +193,16 @@ uint8_t n8 = raw36 & 0x0F;          // Humidity lower
 | n0 | Sensor ID upper | Assigned |  |
 | n1 | Sensor ID lower | Assigned |  |
 | n2[3] | Battery flag | Assigned |  |
-| n2[2] | **Unused** | **UNASSIGNED** | 1 bit unknown |
+| n2[2] | Unused | UNASSIGNED | 1 bit unknown |
 | n2[1:0] | Channel offset (0-2) | Assigned |  |
 | n3[3:0] | Temperature upper | Assigned |  |
 | n4[3:0] | Temperature middle | Assigned |  |
 | n5[3:0] | Temperature lower | Assigned |  |
-| **n6[3:0]** | **SKIPPED ENTIRELY** | **UNASSIGNED** | 4 bits not extracted |
+| n6[3:0] | Unknown | UNASSIGNED | 4 bits not extracted |
 | n7[3:0] | Humidity upper | Assigned |  |
 | n8[3:0] | Humidity lower | Assigned |  |
 
-**Unassigned: n2 bit 2 (1 bit) + complete n6 nibble (4 bits) = 5 total bits**
+**Unassigned:** n2 bit 2 (1 bit) + complete n6 nibble (4 bits) = 5 total bits
 
 
 ### Profile Locking
